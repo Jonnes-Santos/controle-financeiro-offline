@@ -1,0 +1,156 @@
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #3b82f6;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --text-color: #1e293b;
+  --background-color: #f8fafc;
+  --card-background: #ffffff;
+  --border-radius: 0.5rem;
+  --box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: var(--text-color);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -0.05em;
+}
+
+form {
+  background: var(--card-background);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+input, select, button {
+  width: 100%;
+  padding: 0.875rem;
+  border: 2px solid #e2e8f0;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  grid-column: 1 / -1;
+  padding: 0.5rem 1rem; /* Reduzindo o padding */
+  font-size: 0.875rem; /* Ajustando o tamanho da fonte */
+  max-width: 150px; /* Limitando a largura */
+  width: auto; /* Deixa o tamanho do botão mais flexível */
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-1px);
+}
+
+.transaction {
+  background: var(--card-background);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+  justify-content: space-between; /* Alinha os elementos à esquerda e ao final */
+}
+
+.transaction:hover {
+  transform: translateX(5px);
+}
+
+.transaction.income {
+  border-left: 4px solid var(--success-color);
+}
+
+.transaction.expense {
+  border-left: 4px solid var(--danger-color);
+}
+
+.transaction-name {
+  flex-grow: 1; /* Faz com que o nome ocupe o espaço disponível */
+}
+
+.transaction-amount {
+  font-weight: 600;
+  margin-left: auto;
+}
+
+/* Adicione isso no seu HTML antes do fechamento do </body> */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  
+  form {
+    grid-template-columns: 1fr;
+  }
+  
+  .transaction {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .transaction-amount {
+    margin-left: 0;
+  }
+}
+
+/* Adicione classes utilitárias para margens e espaçamento */
+.mb-4 { margin-bottom: 1rem; }
+.mt-2 { margin-top: 0.5rem; }
+.p-4 { padding: 1.5rem; }
+
+[data-type="income"] .transaction-amount {
+  color: var(--success-color);
+}
+
+[data-type="expense"] .transaction-amount {
+  color: var(--danger-color);
+}
+
+.success-message {
+  background: var(--success-color);
+  color: white;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}

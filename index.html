@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle Financeiro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Controle Financeiro</h1>
+  <form id="transaction-form">
+    <select id="type">
+      <option value="gasto">Gasto</option>
+      <option value="ganho">Ganho</option>
+    </select>
+    <input type="text" id="description" placeholder="Descrição" required>
+    <input type="number" id="amount" placeholder="Valor" required>
+    <input type="date" id="date" required>
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <h2>Histórico</h2>
+  <div id="history"></div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
