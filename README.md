@@ -38,4 +38,4 @@ Este projeto é uma aplicação simples e eficiente para gerenciar suas finança
 
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/seu-usuario/controle-financeiro.git
+   git clone https://github.com/jonnes-santos/controle-financeiro.git
